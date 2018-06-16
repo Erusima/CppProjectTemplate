@@ -1,5 +1,4 @@
 CFLAGS := -Wall
-INCLUDE :=
 LIBS :=
 CC := g++
 
@@ -10,7 +9,7 @@ OBJ_FILES := $(patsubst $(SRC_DIR)/%.cpp,$(OBJ_DIR)/%.o,$(SRC_FILES))
 PROG_FILE := program
 
 $(PROG_FILE): $(OBJ_FILES)
-	$(CC) $(CFLAGS) $(OBJ_FILES) -o $@
+	$(CC) $(CFLAGS) $(LIBS) $(OBJ_FILES) -o $@
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 	mkdir -p $(OBJ_DIR)
